@@ -1,0 +1,169 @@
+// Addition of two numbers
+main()
+{
+  int i,j, sum;
+  i=3 , j=4
+  printf("The sum of 2 no.s is : %d", sum);
+  getch():
+}
+
+// C Program to find the sum of
+// even-indices Fibonacci numbers
+#include <stdio.h>
+
+// Computes value of the first 
+// fibonacci numbers and stores
+// the even-indexed sum
+int calculateEvenSum(int n)
+{
+	// return 0 if n is equals or less than to 0
+	if (n <= 0)
+		return 0;
+
+	int fibo[2 * n + 1];
+	fibo[0] = 0, fibo[1] = 1;
+
+	// Initialize the result
+	int sum = 0;
+
+	// Adding the remaining terms
+	for (int i = 2; i <= 2 * n; i++) {
+		fibo[i] = fibo[i - 1] + fibo[i - 2];
+
+		// For even indices
+		if (i % 2 == 0)
+			sum += fibo[i];
+	}
+
+	// Return alternating sum
+	return sum;
+}
+int main()
+{
+
+	// Get n
+	int n = 5;
+
+	// calculateEvenSum(n) function is computed and return
+	// the sum of even-indices Fibonacci numbers.
+	int sum = calculateEvenSum(n);
+
+	// display result
+	printf("Even indexed Fibonacci Sum upto %d terms = %d",
+		n, sum);
+
+	return 0;
+}
+
+//Reverse Number Program
+
+// C program to implement 
+// the above approach 
+#include <stdio.h> 
+
+// Iterative function to 
+// reverse digits of num 
+int reverseDigits(int num) 
+{ 
+	int rev_num = 0; 
+	while (num > 0) { 
+		rev_num = rev_num * 10 + num % 10; 
+		num = num / 10; 
+	} 
+	return rev_num; 
+} 
+
+// Driver code 
+int main() 
+{ 
+	int num = 4562; 
+	printf("Reverse of is %d", reverseDigits(num)); 
+
+	getchar(); 
+	return 0; 
+}
+
+//To print an inverted pyramid pattern
+
+// C program to print
+// inverted pyramid
+// pattern
+#include <stdio.h>
+
+// Driver code
+int main()
+{
+int rows = 8, i, j, space;
+
+for (i = rows; i >= 1; --i) 
+{
+	// Loop to print the blank space
+	for (space = 0; 
+			space < rows - i; ++space)
+		printf(" ");
+	
+	// Loop to print the half of 
+	// the star triangle
+	for (j = i; j <= 2 * i - 1; ++j)
+		printf("* ");
+	
+	// Loop to print the rest of 
+	// the star triangle
+	for (j = 0; j < i - 1; ++j)
+		printf("* ");
+	printf("\n");
+}
+
+return 0;
+}
+
+//Check Whether a Number Can Be Express as Sum of Two Prime Numbers
+
+// C program to check whether a
+// number can be expressed as sum
+// of two prime numbers
+#include <stdio.h>
+
+// Function to check prime number
+int isPrime(int n)
+{
+	int i, isPrime = 1;
+
+	// 0 and 1 are not prime numbers
+	if (n == 0 || n == 1) {
+		isPrime = 0;
+	}
+	else {
+		for (i = 2; i <= n / 2; ++i) {
+			if (n % i == 0) {
+				isPrime = 0;
+				break;
+			}
+		}
+	}
+
+	return isPrime;
+}
+
+// Driver code
+int main()
+{
+	int n = 7, i, flag = 0;
+
+	for (i = 2; i <= n / 2; ++i) {
+		// condition for i to be a
+		// prime number
+		if (isPrime(i) == 1) {
+			// condition for n-i to
+			// be a prime number
+			if (isPrime(n - i) == 1) {
+				printf("Yes\n");
+				return 0;
+			}
+		}
+	}
+
+	printf("No\n");
+	return 0;
+}
+
